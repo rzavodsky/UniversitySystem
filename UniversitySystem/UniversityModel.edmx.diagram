@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1a84b03e8b644f77a9a777aeee7f52f7" Name="Diagram1">
+        <EntityTypeShape EntityType="UniDBModel.City" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Classroom" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Country" Width="1.5" PointX="1.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.DegreeType" Width="1.5" PointX="3.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Faculty" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Lesson" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Person" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Programme" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.StudentGroup" Width="1.5" PointX="8.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.StudentSubject" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniDBModel.Subject" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="UniDBModel.FK_City_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Person_City" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Lesson_Classroom" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Programme_DegreeType" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Person_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Programme_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Subject_Faculty" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Lesson_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Lesson_StudentGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Lesson_Subject" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_Person_StudentGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_StudentSubject_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_StudentGroup_Programme" ManuallyRouted="false" />
+        <AssociationConnector Association="UniDBModel.FK_StudentSubject_Subject" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
