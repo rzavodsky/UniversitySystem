@@ -4,13 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="UniDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="UniDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="City">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="country" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Classroom">
@@ -18,21 +18,21 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Country">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="DegreeType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="length" Type="int" Nullable="false" />
           <Property Name="requiredCredits" Type="int" Nullable="false" />
         </EntityType>
@@ -41,8 +41,8 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
-          <Property Name="description" Type="ntext" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -63,14 +63,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstName" Type="ntext" Nullable="false" />
-          <Property Name="lastName" Type="ntext" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="studentCredits" Type="int" />
           <Property Name="birthDate" Type="date" Nullable="false" />
-          <Property Name="gender" Type="ntext" Nullable="false" />
+          <Property Name="gender" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="city" Type="int" Nullable="false" />
-          <Property Name="loginUsername" Type="ntext" Nullable="false" />
-          <Property Name="loginPassword" Type="ntext" Nullable="false" />
+          <Property Name="loginUsername" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="loginPassword" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="studentGroup" Type="int" />
           <Property Name="teacherFaculty" Type="int" />
           <Property Name="isTeacher" Type="bit" Nullable="false" />
@@ -80,7 +80,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="faculty" Type="int" Nullable="false" />
           <Property Name="degreeType" Type="int" Nullable="false" />
         </EntityType>
@@ -89,7 +89,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="programme" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="StudentSubject">
@@ -106,13 +106,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="ntext" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="faculty" Type="int" Nullable="false" />
           <Property Name="excerciseAmount" Type="int" Nullable="false" />
           <Property Name="lectureAmount" Type="int" Nullable="false" />
           <Property Name="credits" Type="int" Nullable="false" />
           <Property Name="semester" Type="int" Nullable="false" />
-          <Property Name="description" Type="ntext" />
+          <Property Name="description" Type="nvarchar(max)" />
         </EntityType>
         <Association Name="FK_City_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="1" />
@@ -351,8 +351,7 @@
             <End Role="Subject" EntitySet="Subject" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="UniDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -361,7 +360,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="country" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Country1" Relationship="Self.FK_City_Country" FromRole="City" ToRole="Country" />
           <NavigationProperty Name="People" Relationship="Self.FK_Person_City" FromRole="City" ToRole="Person" />
@@ -371,7 +370,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Lessons" Relationship="Self.FK_Lesson_Classroom" FromRole="Classroom" ToRole="Lesson" />
         </EntityType>
         <EntityType Name="Country">
@@ -379,7 +378,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Cities" Relationship="Self.FK_City_Country" FromRole="Country" ToRole="City" />
         </EntityType>
         <EntityType Name="DegreeType">
@@ -387,7 +386,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="length" Type="Int32" Nullable="false" />
           <Property Name="requiredCredits" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Programmes" Relationship="Self.FK_Programme_DegreeType" FromRole="DegreeType" ToRole="Programme" />
@@ -397,7 +396,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="People" Relationship="Self.FK_Person_Faculty" FromRole="Faculty" ToRole="Person" />
           <NavigationProperty Name="Programmes" Relationship="Self.FK_Programme_Faculty" FromRole="Faculty" ToRole="Programme" />
@@ -426,14 +425,14 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="lastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="studentCredits" Type="Int32" />
           <Property Name="birthDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="city" Type="Int32" Nullable="false" />
-          <Property Name="loginUsername" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="loginPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="loginUsername" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="loginPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="studentGroup" Type="Int32" />
           <Property Name="teacherFaculty" Type="Int32" />
           <Property Name="isTeacher" Type="Boolean" Nullable="false" />
@@ -448,7 +447,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="faculty" Type="Int32" Nullable="false" />
           <Property Name="degreeType" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DegreeType1" Relationship="Self.FK_Programme_DegreeType" FromRole="Programme" ToRole="DegreeType" />
@@ -460,7 +459,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="programme" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Lessons" Relationship="Self.FK_Lesson_StudentGroup" FromRole="StudentGroup" ToRole="Lesson" />
           <NavigationProperty Name="People" Relationship="Self.FK_Person_StudentGroup" FromRole="StudentGroup" ToRole="Person" />
@@ -482,7 +481,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="faculty" Type="Int32" Nullable="false" />
           <Property Name="excerciseAmount" Type="Int32" Nullable="false" />
           <Property Name="lectureAmount" Type="Int32" Nullable="false" />
