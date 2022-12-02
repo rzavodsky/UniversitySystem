@@ -96,6 +96,7 @@
     <Compile Include="Subject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DBConnection.cs" />
     <Compile Include="UniversityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
