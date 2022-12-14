@@ -70,6 +70,12 @@
     <Compile Include="Faculty.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="StudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentListForm.Designer.cs">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,14 +96,14 @@
     <Compile Include="StudentGroup.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="StudentListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentListForm.Designer.cs">
-      <DependentUpon>StudentListForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentSubject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentUpdateForm.Designer.cs">
+      <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Subject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
@@ -130,6 +136,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentListForm.resx">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentUpdateForm.resx">
+      <DependentUpon>StudentUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
