@@ -17,7 +17,7 @@ namespace UniversitySystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void submitButton_Click(object sender, EventArgs e)
         {
             var people = DBConnection.DB.People;
             var query = from p in people

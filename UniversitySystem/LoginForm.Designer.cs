@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.passwordInput = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.Location = new System.Drawing.Point(103, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.submitButton.Location = new System.Drawing.Point(103, 95);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 0;
+            this.submitButton.Text = "Log In";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // label2
             // 
@@ -76,8 +76,9 @@
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(100, 20);
             this.passwordInput.TabIndex = 5;
+            this.passwordInput.UseSystemPasswordChar = true;
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,8 +87,8 @@
             this.Controls.Add(this.usernameInput);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Controls.Add(this.submitButton);
+            this.Name = "LoginForm";
             this.Text = "University Login";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,7 +97,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox usernameInput;
         private System.Windows.Forms.Label label1;
