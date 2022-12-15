@@ -25,11 +25,13 @@ namespace UniversitySystem
 
         private void SetupGridView()
         {
-            listGridView.ColumnCount = 4;
-            listGridView.Columns[0].Name = "First Name";
-            listGridView.Columns[1].Name = "Last Name";
-            listGridView.Columns[2].Name = "Credits";
-            listGridView.Columns[3].Name = "Birth Date";
+            listGridView.ColumnCount = 5;
+            listGridView.Columns[0].Name = "Id";
+            listGridView.Columns[0].Visible = false;
+            listGridView.Columns[1].Name = "First Name";
+            listGridView.Columns[2].Name = "Last Name";
+            listGridView.Columns[3].Name = "Credits";
+            listGridView.Columns[4].Name = "Birth Date";
         }
 
         private void PopulateGridView()
@@ -41,10 +43,11 @@ namespace UniversitySystem
                            select student;
             foreach (var student in students)
             {
-                listGridView.Rows.Add(new string[] { 
+                listGridView.Rows.Add(new object[] {
+                    student.id,
                     student.firstName, 
                     student.lastName, 
-                    student.studentCredits.ToString(), 
+                    student.studentCredits, 
                     student.birthDate.ToShortDateString(),
                 });
             }
@@ -58,9 +61,30 @@ namespace UniversitySystem
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var addForm = new StudentUpdateForm();
+            var addForm = new StudentUpdateForm(null);
             addForm.Show();
             addForm.FormClosed += (object _sender, FormClosedEventArgs _e) => PopulateGridView();
+        }
+
+        private Person getSelectedStudent()
+        {
+            var studentId = (int)listGridView.SelectedRows[0].Cells[0].Value;
+            return DBConnection.DB.People.Find(studentId);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            var editForm = new StudentUpdateForm(getSelectedStudent());
+            editForm.Show();
+            editForm.FormClosed += (object _sender, FormClosedEventArgs _e) => PopulateGridView();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            var student = getSelectedStudent();
+            DBConnection.DB.People.Remove(student);
+            DBConnection.DB.SaveChanges();
+            PopulateGridView();
         }
     }
 }

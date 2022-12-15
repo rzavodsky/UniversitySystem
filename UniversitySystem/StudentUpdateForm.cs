@@ -12,12 +12,28 @@ namespace UniversitySystem
 {
     public partial class StudentUpdateForm : Form
     {
-        public StudentUpdateForm()
+        private Person student;
+        public StudentUpdateForm(Person student)
         {
+            this.student = student;
             InitializeComponent();
             InitializeCountryDropDown();
             InitializeCityDropDown();
             InitializeStudGroupDropDown();
+            InitializeFields();
+        }
+
+        private void InitializeFields()
+        {
+            if (this.student == null) return;
+
+            firstNameInput.Text = this.student.firstName;
+            lastNameInput.Text = this.student.lastName;
+            birthDateInput.Value = this.student.birthDate;
+            genderInput.Text = this.student.gender;
+            countryInput.SelectedItem = this.student.City1.Country1;
+            cityInput.SelectedItem = this.student.City1;
+            studGroupInput.SelectedItem = this.student.StudentGroup1;
         }
 
         private void InitializeStudGroupDropDown()
@@ -45,22 +61,38 @@ namespace UniversitySystem
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            var person = new Person();
-            person.firstName = firstNameInput.Text;
-            person.lastName = lastNameInput.Text;
-            person.studentCredits = 0;
-            person.birthDate = birthDateInput.Value;
-            person.gender = genderInput.Text;
-            person.City1 = (City)cityInput.SelectedItem;
-            var sameNamedPeople = from p in DBConnection.DB.People
-                                  where p.lastName.ToLower() == person.lastName.ToLower()
-                                  select p;
-            person.loginUsername = person.lastName.ToLower() + (sameNamedPeople.Count() + 1);
-            person.loginPassword = "password";
+            if (this.student == null)
+            {
+                this.student = new Person();
+                DBConnection.DB.People.Add(this.student);
+            }
+            
+            this.student.firstName = firstNameInput.Text;
+            this.student.lastName = lastNameInput.Text;
+            this.student.birthDate = birthDateInput.Value;
+            this.student.gender = genderInput.Text;
+            this.student.City1 = (City)cityInput.SelectedItem;
+            if (this.student.studentCredits == null)
+            {
+                this.student.studentCredits = 0;
+            }
+            if (this.student.loginUsername == null)
+            {
+                var sameNamedPeople = from p in DBConnection.DB.People
+                                      where p.lastName.ToLower() == this.student.lastName.ToLower()
+                                      select p;
+                this.student.loginUsername = this.student.lastName.ToLower() + (sameNamedPeople.Count() + 1);
+            }
 
-            person.StudentGroup1 = (StudentGroup)studGroupInput.SelectedItem;
-            person.isTeacher = false;
-            DBConnection.DB.People.Add(person);
+            if (this.student.loginPassword == null)
+            {
+                this.student.loginPassword = "password";
+
+            }
+
+            this.student.StudentGroup1 = (StudentGroup)studGroupInput.SelectedItem;
+            this.student.isTeacher = false;
+
             DBConnection.DB.SaveChanges();
             this.Close();
         }
