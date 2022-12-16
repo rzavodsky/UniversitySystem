@@ -67,6 +67,12 @@
     <Compile Include="Classroom.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClassroomUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassroomUpdateForm.Designer.cs">
+      <DependentUpon>ClassroomUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Country.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassroomUpdateForm.resx">
+      <DependentUpon>ClassroomUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
