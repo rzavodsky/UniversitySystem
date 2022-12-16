@@ -26,7 +26,7 @@ namespace UniversitySystem
                         select p;
             if (query.Count() == 1) 
             {
-                var f2 = new StudentListForm();
+                var f2 = new AdminMenu();
                 this.Hide();
                 f2.Show();
             }
