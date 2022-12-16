@@ -74,7 +74,7 @@ namespace UniversitySystem
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            var editForm = new StudentUpdateForm(getSelectedStudent());
+            var editForm = new StudentUpdateForm(getSelectedStudent().id);
             editForm.Show();
             editForm.FormClosed += (object _sender, FormClosedEventArgs _e) => PopulateGridView();
         }

@@ -13,9 +13,15 @@ namespace UniversitySystem
     public partial class StudentUpdateForm : Form
     {
         private Person student;
-        public StudentUpdateForm(Person student)
+        public StudentUpdateForm(int? studentId)
         {
-            this.student = student;
+            if (studentId == null)
+            {
+                this.student = null;
+            } else
+            {
+                this.student = DBConnection.DB.People.Find(studentId);
+            }
             InitializeComponent();
             InitializeCountryDropDown();
             InitializeCityDropDown();
