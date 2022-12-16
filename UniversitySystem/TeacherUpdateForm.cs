@@ -13,10 +13,16 @@ namespace UniversitySystem
     public partial class TeacherUpdateForm : Form
     {
         private Person teacher;
-        public TeacherUpdateForm(Person teacher)
+        public TeacherUpdateForm(int? teacherId)
         {
-            InitializeComponent();
-            this.teacher = teacher;
+
+            if (teacherId == null)
+            {
+                this.teacher = null;
+            } else
+            {
+                this.teacher = DBConnection.DB.People.Find(teacherId);
+            }
             InitializeComponent();
             InitializeCountryDropDown();
             InitializeCityDropDown();
