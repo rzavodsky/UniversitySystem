@@ -115,6 +115,12 @@
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="TeacherUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherUpdateForm.Designer.cs">
+      <DependentUpon>TeacherUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UniversityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentUpdateForm.resx">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherUpdateForm.resx">
+      <DependentUpon>TeacherUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
