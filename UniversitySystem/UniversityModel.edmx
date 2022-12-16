@@ -43,6 +43,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="shortcut" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -401,6 +402,7 @@
           <NavigationProperty Name="People" Relationship="Self.FK_Person_Faculty" FromRole="Faculty" ToRole="Person" />
           <NavigationProperty Name="Programmes" Relationship="Self.FK_Programme_Faculty" FromRole="Faculty" ToRole="Programme" />
           <NavigationProperty Name="Subjects" Relationship="Self.FK_Subject_Faculty" FromRole="Faculty" ToRole="Subject" />
+          <Property Name="shortcut" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Lesson">
           <Key>
@@ -773,6 +775,7 @@
           <EntitySetMapping Name="Faculties">
             <EntityTypeMapping TypeName="UniDBModel.Faculty">
               <MappingFragment StoreEntitySet="Faculty">
+                <ScalarProperty Name="shortcut" ColumnName="shortcut" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="description" ColumnName="description" />
