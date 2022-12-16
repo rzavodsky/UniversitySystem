@@ -49,7 +49,8 @@ namespace UniversitySystem
                         teacher.birthDate.ToShortDateString(),
                     });
                 }
-            }, (id) => null, (id) => { }),
+            }, (id) => new TeacherUpdateForm(id), 
+               (id) => DBConnection.DB.People.Remove(DBConnection.DB.People.Find(id))),
         };
 
         public AdminMenu()
