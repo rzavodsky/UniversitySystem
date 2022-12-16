@@ -104,6 +104,12 @@
     <Compile Include="Programme.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProgrammeUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgrammeUpdateForm.Designer.cs">
+      <DependentUpon>ProgrammeUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentGroup.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgrammeUpdateForm.resx">
+      <DependentUpon>ProgrammeUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
