@@ -65,6 +65,22 @@ namespace UniversitySystem
                 }
             }, (id) => new ClassroomUpdateForm(id),
                (id) => DBConnection.DB.Classrooms.Remove(DBConnection.DB.Classrooms.Find(id))),
+
+            new Resource("Faculties", new string[]{"Name", "Shortcut", "Description"}, (dataGridView) =>
+            {
+                var faculties = from faculty in DBConnection.DB.Faculties
+                               select faculty;
+                foreach (var faculty in faculties)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        faculty.id,
+                        faculty.name,
+                        faculty.shortcut,
+                        faculty.description,
+                    });
+                }
+            }, (id) => new FacultyUpdateForm(id),
+               (id) => DBConnection.DB.Faculties.Remove(DBConnection.DB.Faculties.Find(id))),
         };
 
         public AdminMenu()
