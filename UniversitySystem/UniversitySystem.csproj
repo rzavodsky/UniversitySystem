@@ -64,6 +64,12 @@
     <Compile Include="City.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CityUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityUpdateForm.Designer.cs">
+      <DependentUpon>CityUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classroom.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
@@ -75,6 +81,12 @@
     </Compile>
     <Compile Include="Country.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CountryUpdateForm.Designer.cs">
+      <DependentUpon>CountryUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DegreeType.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
@@ -156,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FacultyUpdateForm.resx">
       <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CityUpdateForm.resx">
+      <DependentUpon>CityUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountryUpdateForm.resx">
+      <DependentUpon>CountryUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
