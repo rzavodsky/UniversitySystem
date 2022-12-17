@@ -52,6 +52,35 @@ namespace UniversitySystem
             }, (id) => new TeacherUpdateForm(id), 
                (id) => DBConnection.DB.People.Remove(DBConnection.DB.People.Find(id))),
 
+            new Resource("Countries", new string[]{"Name"}, (dataGridView) =>
+            {
+                var countries = from country in DBConnection.DB.Countries
+                               select country;
+                foreach (var country in countries)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        country.id,
+                        country.name,
+                    });
+                }
+            }, (id) => new CountryUpdateForm(id),
+               (id) => DBConnection.DB.Countries.Remove(DBConnection.DB.Countries.Find(id))),
+
+            new Resource("Cities", new string[]{"Name", "Country"}, (dataGridView) =>
+            {
+                var cities = from city in DBConnection.DB.Cities
+                               select city;
+                foreach (var city in cities)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        city.id,
+                        city.name,
+                        city.Country1.name,
+                    });
+                }
+            }, (id) => new CityUpdateForm(id),
+               (id) => DBConnection.DB.Cities.Remove(DBConnection.DB.Cities.Find(id))),
+
             new Resource("Classrooms", new string[]{"Name"}, (dataGridView) =>
             {
                 var classrooms = from classroom in DBConnection.DB.Classrooms
