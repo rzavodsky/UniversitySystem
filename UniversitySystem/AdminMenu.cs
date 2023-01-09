@@ -126,6 +126,37 @@ namespace UniversitySystem
                 }
             }, (id) => new ProgrammeUpdateForm(id),
                (id) => DBConnection.DB.Programmes.Remove(DBConnection.DB.Programmes.Find(id))),
+
+            new Resource("Degree Types", new string[]{"Name", "Duration", "Required Credits"}, (dataGridView) =>
+            {
+                var degreeTypes = from degreeType in DBConnection.DB.DegreeTypes
+                                  select degreeType;
+                foreach (var degreeType in degreeTypes)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        degreeType.id,
+                        degreeType.name,
+                        degreeType.length,
+                        degreeType.requiredCredits,
+                    });
+                }
+            }, (id) => new DegreeTypeUpdateForm(id),
+               (id) => DBConnection.DB.DegreeTypes.Remove(DBConnection.DB.DegreeTypes.Find(id))),
+
+            new Resource("Student Groups", new string[]{"Name", "Programme"}, (dataGridView) =>
+            {
+                var studentGroups = from studentGroup in DBConnection.DB.StudentGroups
+                                  select studentGroup;
+                foreach (var studentGroup in studentGroups)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        studentGroup.id,
+                        studentGroup.name,
+                        studentGroup.Programme1.name,
+                    });
+                }
+            }, (id) => new StudentGroupUpdateForm(id),
+               (id) => DBConnection.DB.StudentGroups.Remove(DBConnection.DB.StudentGroups.Find(id))),
         };
 
         public AdminMenu()
