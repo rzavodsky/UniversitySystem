@@ -37,6 +37,14 @@ namespace UniversitySystem
                 var f2 = new AdminMenu();
                 this.Hide();
                 f2.Show();
+            } else
+            {
+                MessageBox.Show("Invalid username or password", 
+                    "Login Invalid", 
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
+                usernameInput.Text = "";
+                passwordInput.Text = "";
             }
         }
     }
