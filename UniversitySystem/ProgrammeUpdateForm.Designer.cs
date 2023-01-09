@@ -40,9 +40,11 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(48, 106);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(64, 130);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -50,9 +52,10 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(216, 106);
+            this.confirmButton.Location = new System.Drawing.Point(288, 130);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.Size = new System.Drawing.Size(100, 28);
             this.confirmButton.TabIndex = 1;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -62,59 +65,67 @@
             // 
             this.facultyInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.facultyInput.FormattingEnabled = true;
-            this.facultyInput.Location = new System.Drawing.Point(119, 38);
+            this.facultyInput.Location = new System.Drawing.Point(159, 47);
+            this.facultyInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.facultyInput.Name = "facultyInput";
-            this.facultyInput.Size = new System.Drawing.Size(157, 21);
+            this.facultyInput.Size = new System.Drawing.Size(208, 24);
             this.facultyInput.TabIndex = 2;
             // 
             // degreeTypeInput
             // 
             this.degreeTypeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.degreeTypeInput.FormattingEnabled = true;
-            this.degreeTypeInput.Location = new System.Drawing.Point(119, 65);
+            this.degreeTypeInput.Location = new System.Drawing.Point(159, 80);
+            this.degreeTypeInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.degreeTypeInput.Name = "degreeTypeInput";
-            this.degreeTypeInput.Size = new System.Drawing.Size(157, 21);
+            this.degreeTypeInput.Size = new System.Drawing.Size(208, 24);
             this.degreeTypeInput.TabIndex = 3;
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(119, 12);
+            this.nameInput.Location = new System.Drawing.Point(159, 15);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(157, 20);
+            this.nameInput.Size = new System.Drawing.Size(208, 22);
             this.nameInput.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 15);
+            this.label1.Location = new System.Drawing.Point(100, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Name:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 41);
+            this.label2.Location = new System.Drawing.Point(92, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(53, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Faculty:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 68);
+            this.label3.Location = new System.Drawing.Point(55, 84);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Degree Type:";
             // 
             // ProgrammeUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.confirmButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 149);
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(447, 183);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -123,6 +134,7 @@
             this.Controls.Add(this.facultyInput);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.cancelButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProgrammeUpdateForm";
             this.Text = "Update Programme";
             this.ResumeLayout(false);

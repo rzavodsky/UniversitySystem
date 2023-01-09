@@ -49,9 +49,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(41, 91);
+            this.label7.Location = new System.Drawing.Point(55, 112);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.Size = new System.Drawing.Size(53, 16);
             this.label7.TabIndex = 31;
             this.label7.Text = "Faculty:";
             // 
@@ -59,33 +60,37 @@
             // 
             this.facultyInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.facultyInput.FormattingEnabled = true;
-            this.facultyInput.Location = new System.Drawing.Point(95, 89);
+            this.facultyInput.Location = new System.Drawing.Point(127, 110);
+            this.facultyInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.facultyInput.Name = "facultyInput";
-            this.facultyInput.Size = new System.Drawing.Size(146, 21);
+            this.facultyInput.Size = new System.Drawing.Size(193, 24);
             this.facultyInput.TabIndex = 30;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(280, 13);
+            this.label6.Location = new System.Drawing.Point(373, 16);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.Size = new System.Drawing.Size(55, 16);
             this.label6.TabIndex = 29;
             this.label6.Text = "Gender:";
             // 
             // genderInput
             // 
-            this.genderInput.Location = new System.Drawing.Point(332, 11);
+            this.genderInput.Location = new System.Drawing.Point(443, 14);
+            this.genderInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.genderInput.Name = "genderInput";
-            this.genderInput.Size = new System.Drawing.Size(140, 20);
+            this.genderInput.Size = new System.Drawing.Size(185, 22);
             this.genderInput.TabIndex = 28;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(297, 65);
+            this.label5.Location = new System.Drawing.Point(396, 80);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.Size = new System.Drawing.Size(32, 16);
             this.label5.TabIndex = 27;
             this.label5.Text = "City:";
             // 
@@ -93,17 +98,19 @@
             // 
             this.cityInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cityInput.FormattingEnabled = true;
-            this.cityInput.Location = new System.Drawing.Point(332, 63);
+            this.cityInput.Location = new System.Drawing.Point(443, 78);
+            this.cityInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cityInput.Name = "cityInput";
-            this.cityInput.Size = new System.Drawing.Size(140, 21);
+            this.cityInput.Size = new System.Drawing.Size(185, 24);
             this.cityInput.TabIndex = 26;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(280, 38);
+            this.label4.Location = new System.Drawing.Point(373, 47);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Country:";
             // 
@@ -111,65 +118,74 @@
             // 
             this.countryInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.countryInput.FormattingEnabled = true;
-            this.countryInput.Location = new System.Drawing.Point(332, 36);
+            this.countryInput.Location = new System.Drawing.Point(443, 44);
+            this.countryInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.countryInput.Name = "countryInput";
-            this.countryInput.Size = new System.Drawing.Size(140, 21);
+            this.countryInput.Size = new System.Drawing.Size(185, 24);
             this.countryInput.TabIndex = 24;
             this.countryInput.SelectedIndexChanged += new System.EventHandler(this.countryInput_SelectedIndexChanged);
             // 
             // firstNameInput
             // 
-            this.firstNameInput.Location = new System.Drawing.Point(95, 11);
+            this.firstNameInput.Location = new System.Drawing.Point(127, 14);
+            this.firstNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.firstNameInput.Name = "firstNameInput";
-            this.firstNameInput.Size = new System.Drawing.Size(146, 20);
+            this.firstNameInput.Size = new System.Drawing.Size(193, 22);
             this.firstNameInput.TabIndex = 19;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 13);
+            this.label1.Location = new System.Drawing.Point(33, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 18;
             this.label1.Text = "First Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 65);
+            this.label3.Location = new System.Drawing.Point(40, 80);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 23;
             this.label3.Text = "Birth Date:";
             // 
             // birthDateInput
             // 
-            this.birthDateInput.Location = new System.Drawing.Point(95, 63);
+            this.birthDateInput.Location = new System.Drawing.Point(127, 78);
+            this.birthDateInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.birthDateInput.Name = "birthDateInput";
-            this.birthDateInput.Size = new System.Drawing.Size(146, 20);
+            this.birthDateInput.Size = new System.Drawing.Size(193, 22);
             this.birthDateInput.TabIndex = 22;
             // 
             // lastNameInput
             // 
-            this.lastNameInput.Location = new System.Drawing.Point(95, 37);
+            this.lastNameInput.Location = new System.Drawing.Point(127, 46);
+            this.lastNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lastNameInput.Name = "lastNameInput";
-            this.lastNameInput.Size = new System.Drawing.Size(146, 20);
+            this.lastNameInput.Size = new System.Drawing.Size(193, 22);
             this.lastNameInput.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 38);
+            this.label2.Location = new System.Drawing.Point(33, 47);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 20;
             this.label2.Text = "Last Name:";
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(140, 130);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(187, 160);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 17;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -177,9 +193,10 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(263, 130);
+            this.confirmButton.Location = new System.Drawing.Point(351, 160);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.Size = new System.Drawing.Size(100, 28);
             this.confirmButton.TabIndex = 16;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -187,9 +204,11 @@
             // 
             // TeacherUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.confirmButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 206);
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(692, 254);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.facultyInput);
             this.Controls.Add(this.label6);
@@ -206,7 +225,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TeacherUpdateForm";
             this.Text = "TeacherUpdateForm";
             this.ResumeLayout(false);

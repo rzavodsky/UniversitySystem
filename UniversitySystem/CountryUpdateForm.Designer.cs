@@ -54,6 +54,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(70, 87);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButton.Name = "cancelButton";
@@ -76,8 +77,10 @@
             // 
             // CountryUpdateForm
             // 
+            this.AcceptButton = this.confirmButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(467, 167);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);

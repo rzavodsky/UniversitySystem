@@ -37,24 +37,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 15);
+            this.label1.Location = new System.Drawing.Point(52, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(83, 12);
+            this.nameInput.Location = new System.Drawing.Point(111, 15);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(100, 20);
+            this.nameInput.Size = new System.Drawing.Size(132, 22);
             this.nameInput.TabIndex = 1;
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(143, 52);
+            this.confirmButton.Location = new System.Drawing.Point(191, 64);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.Size = new System.Drawing.Size(100, 28);
             this.confirmButton.TabIndex = 2;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -62,9 +65,11 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(30, 52);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(40, 64);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 3;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -72,13 +77,16 @@
             // 
             // ClassroomUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.confirmButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 95);
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(333, 117);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ClassroomUpdateForm";
             this.Text = "Update Classroom";
             this.ResumeLayout(false);

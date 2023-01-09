@@ -96,8 +96,10 @@
             // 
             // StudentGroupUpdateForm
             // 
+            this.AcceptButton = this.confirmButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(383, 161);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

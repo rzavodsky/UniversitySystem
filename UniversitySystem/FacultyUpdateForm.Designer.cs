@@ -40,9 +40,10 @@
             // 
             // confirmButton
             // 
-            this.confirmButton.Location = new System.Drawing.Point(250, 167);
+            this.confirmButton.Location = new System.Drawing.Point(333, 206);
+            this.confirmButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.confirmButton.Name = "confirmButton";
-            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.Size = new System.Drawing.Size(100, 28);
             this.confirmButton.TabIndex = 0;
             this.confirmButton.Text = "Confirm";
             this.confirmButton.UseVisualStyleBackColor = true;
@@ -50,9 +51,11 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(92, 167);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(123, 206);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(100, 28);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -61,57 +64,63 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 47);
+            this.label1.Location = new System.Drawing.Point(35, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Shortcut:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 21);
+            this.label2.Location = new System.Drawing.Point(51, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 73);
+            this.label3.Location = new System.Drawing.Point(17, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Description:";
             // 
             // shortcutInput
             // 
-            this.shortcutInput.Location = new System.Drawing.Point(82, 44);
+            this.shortcutInput.Location = new System.Drawing.Point(109, 54);
+            this.shortcutInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.shortcutInput.Name = "shortcutInput";
-            this.shortcutInput.Size = new System.Drawing.Size(100, 20);
+            this.shortcutInput.Size = new System.Drawing.Size(132, 22);
             this.shortcutInput.TabIndex = 5;
             // 
             // descriptionInput
             // 
-            this.descriptionInput.Location = new System.Drawing.Point(82, 70);
+            this.descriptionInput.Location = new System.Drawing.Point(109, 86);
+            this.descriptionInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descriptionInput.Multiline = true;
             this.descriptionInput.Name = "descriptionInput";
-            this.descriptionInput.Size = new System.Drawing.Size(268, 79);
+            this.descriptionInput.Size = new System.Drawing.Size(356, 96);
             this.descriptionInput.TabIndex = 6;
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(82, 18);
+            this.nameInput.Location = new System.Drawing.Point(109, 22);
+            this.nameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nameInput.Name = "nameInput";
-            this.nameInput.Size = new System.Drawing.Size(190, 20);
+            this.nameInput.Size = new System.Drawing.Size(252, 22);
             this.nameInput.TabIndex = 7;
             // 
             // FacultyUpdateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 211);
+            this.ClientSize = new System.Drawing.Size(517, 260);
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.descriptionInput);
             this.Controls.Add(this.shortcutInput);
@@ -120,6 +129,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FacultyUpdateForm";
             this.Text = "Update Faculty";
             this.ResumeLayout(false);
