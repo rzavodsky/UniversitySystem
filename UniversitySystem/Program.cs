@@ -16,7 +16,10 @@ namespace UniversitySystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            var context = new ApplicationContext();
+            context.MainForm = new LoginForm(context);
+            Application.Run(context);
         }
     }
 }

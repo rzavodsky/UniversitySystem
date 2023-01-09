@@ -12,18 +12,25 @@ namespace UniversitySystem
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        private ApplicationContext context;
+        public LoginForm(ApplicationContext context)
         {
             InitializeComponent();
+            this.context = context;
+        }
+
+        private void ChangeForm(Form newForm)
+        {
+            this.context.MainForm = newForm;
+            this.Close();
+            newForm.Show();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
             if (usernameInput.Text == "admin" && passwordInput.Text == "admin")
             {
-                var form = new AdminMenu();
-                this.Hide();
-                form.Show();
+                ChangeForm(new AdminMenu());
                 return;
             }
 
@@ -34,9 +41,7 @@ namespace UniversitySystem
                         select p;
             if (query.Count() == 1) 
             {
-                var f2 = new AdminMenu();
-                this.Hide();
-                f2.Show();
+                ChangeForm(new AdminMenu());
             } else
             {
                 MessageBox.Show("Invalid username or password", 
