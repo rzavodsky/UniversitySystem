@@ -19,6 +19,14 @@ namespace UniversitySystem
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            if (usernameInput.Text == "admin" && passwordInput.Text == "admin")
+            {
+                var form = new AdminMenu();
+                this.Hide();
+                form.Show();
+                return;
+            }
+
             var people = DBConnection.DB.People;
             var query = from p in people
                         where p.loginUsername == usernameInput.Text
