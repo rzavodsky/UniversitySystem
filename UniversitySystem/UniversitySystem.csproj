@@ -91,6 +91,12 @@
     <Compile Include="DegreeType.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DegreeTypeUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DegreeTypeUpdateForm.Designer.cs">
+      <DependentUpon>DegreeTypeUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Faculty.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
@@ -125,6 +131,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentGroup.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentGroupUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentGroupUpdateForm.Designer.cs">
+      <DependentUpon>StudentGroupUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSubject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
@@ -166,6 +178,9 @@
     <EmbeddedResource Include="ClassroomUpdateForm.resx">
       <DependentUpon>ClassroomUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DegreeTypeUpdateForm.resx">
+      <DependentUpon>DegreeTypeUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacultyUpdateForm.resx">
       <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +205,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StudentGroupUpdateForm.resx">
+      <DependentUpon>StudentGroupUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentUpdateForm.resx">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
