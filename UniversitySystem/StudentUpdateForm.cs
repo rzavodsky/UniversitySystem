@@ -84,10 +84,7 @@ namespace UniversitySystem
             }
             if (this.student.loginUsername == null)
             {
-                var sameNamedPeople = from p in DBConnection.DB.People
-                                      where p.lastName.ToLower() == this.student.lastName.ToLower()
-                                      select p;
-                this.student.loginUsername = this.student.lastName.ToLower() + (sameNamedPeople.Count() + 1);
+                this.student.loginUsername = GenerateUsername();
             }
 
             if (this.student.loginPassword == null)
@@ -101,6 +98,17 @@ namespace UniversitySystem
 
             DBConnection.DB.SaveChanges();
             this.Close();
+        }
+
+        private string GenerateUsername()
+        {
+            byte[] tempBytes = System.Text.Encoding.GetEncoding("ISO-8859-8").GetBytes(lastNameInput.Text);
+            var lastName = System.Text.Encoding.UTF8.GetString(tempBytes).ToLower();
+
+            var sameNamedPeople = from p in DBConnection.DB.People
+                                  where p.lastName.ToLower() == lastName
+                                  select p;
+            return lastName + (sameNamedPeople.Count() + 1);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
