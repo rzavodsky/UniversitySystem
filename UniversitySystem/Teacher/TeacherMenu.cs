@@ -38,6 +38,7 @@ namespace UniversitySystem
 
         private void PopulateSubjectList()
         {
+            subjectList.Columns.Clear();
             subjectList.Columns.Add("id", "");
             subjectList.Columns[0].Visible = false;
             subjectList.Columns.Add("Name", "Name");
@@ -49,6 +50,7 @@ namespace UniversitySystem
             var subjects = from lesson in this.teacher.Lessons
                            group lesson by lesson.Subject1 into newGroup
                            select newGroup;
+            subjectList.Rows.Clear();
 
             foreach (var subjectGrp in subjects)
             {
@@ -126,7 +128,12 @@ namespace UniversitySystem
 
         private void studentListButton_Click(object sender, EventArgs e)
         {
+            var subjectId = (int)subjectList.SelectedRows[0].Cells[0].Value;
+            var subject = DBConnection.DB.Subjects.Find(subjectId);
 
+            var form = new StudentListForm(subject);
+            form.ShowDialog();
+            PopulateSubjectList();
         }
     }
 }

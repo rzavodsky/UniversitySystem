@@ -169,6 +169,18 @@
     <Compile Include="PasswordChangeForm.Designer.cs">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teacher\GradeUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\GradeUpdateForm.Designer.cs">
+      <DependentUpon>GradeUpdateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\StudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Teacher\StudentListForm.Designer.cs">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Teacher\TeacherMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PasswordChangeForm.resx">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\GradeUpdateForm.resx">
+      <DependentUpon>GradeUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Teacher\StudentListForm.resx">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Teacher\TeacherMenu.resx">
       <DependentUpon>TeacherMenu.cs</DependentUpon>
