@@ -215,7 +215,7 @@ namespace UniversitySystem
             var resource = (Resource)resourceSelector.SelectedItem;
             var form = resource.OpenForm(null);
             form.ShowDialog();
-            form.FormClosed += (object _sender, FormClosedEventArgs _e) => PopulateDataGridView();
+            PopulateDataGridView();
         }
 
         private void editButton_Click(object sender, EventArgs e)
@@ -223,7 +223,7 @@ namespace UniversitySystem
             var resource = (Resource)resourceSelector.SelectedItem;
             var form = resource.OpenForm((int)dataGridView.SelectedRows[0].Cells[0].Value);
             form.ShowDialog();
-            form.FormClosed += (object _sender, FormClosedEventArgs _e) => PopulateDataGridView();
+            PopulateDataGridView();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
