@@ -100,7 +100,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="student" Type="int" Nullable="false" />
           <Property Name="subject" Type="int" Nullable="false" />
-          <Property Name="grade" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="grade" Type="nvarchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="Subject">
           <Key>
@@ -474,7 +474,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="student" Type="Int32" Nullable="false" />
           <Property Name="subject" Type="Int32" Nullable="false" />
-          <Property Name="grade" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="grade" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Person" Relationship="Self.FK_StudentSubject_Person" FromRole="StudentSubject" ToRole="Person" />
           <NavigationProperty Name="Subject1" Relationship="Self.FK_StudentSubject_Subject" FromRole="StudentSubject" ToRole="Subject" />
         </EntityType>
