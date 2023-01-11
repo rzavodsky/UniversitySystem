@@ -114,6 +114,7 @@
           <Property Name="credits" Type="int" Nullable="false" />
           <Property Name="semester" Type="int" Nullable="false" />
           <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="shortcut" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Association Name="FK_City_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="1" />
@@ -493,6 +494,7 @@
           <NavigationProperty Name="Faculty1" Relationship="Self.FK_Subject_Faculty" FromRole="Subject" ToRole="Faculty" />
           <NavigationProperty Name="Lessons" Relationship="Self.FK_Lesson_Subject" FromRole="Subject" ToRole="Lesson" />
           <NavigationProperty Name="StudentSubjects" Relationship="Self.FK_StudentSubject_Subject" FromRole="Subject" ToRole="StudentSubject" />
+          <Property Name="shortcut" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_City_Country">
           <End Role="Country" Type="Self.Country" Multiplicity="1" />
@@ -847,6 +849,7 @@
           <EntitySetMapping Name="Subjects">
             <EntityTypeMapping TypeName="UniDBModel.Subject">
               <MappingFragment StoreEntitySet="Subject">
+                <ScalarProperty Name="shortcut" ColumnName="shortcut" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="faculty" ColumnName="faculty" />

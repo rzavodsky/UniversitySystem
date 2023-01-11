@@ -29,6 +29,7 @@ namespace UniversitySystem
         public int credits { get; set; }
         public int semester { get; set; }
         public string description { get; set; }
+        public string shortcut { get; set; }
     
         public virtual Faculty Faculty1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
