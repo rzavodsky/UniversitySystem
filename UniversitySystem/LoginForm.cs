@@ -41,7 +41,15 @@ namespace UniversitySystem
                         select p;
             if (query.Count() == 1) 
             {
-                ChangeForm(new AdminMenu());
+                var person = query.Single();
+                if (person.isTeacher) 
+                { 
+                    ChangeForm(new TeacherMenu(person));
+                } else
+                {
+                    throw new NotImplementedException();
+                }
+                
             } else
             {
                 MessageBox.Show("Invalid username or password", 
