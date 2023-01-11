@@ -32,6 +32,7 @@ namespace UniversitySystem
             facultyLabel.Text = teacher.Faculty.shortcut;
             usernameLabel.Text = teacher.loginUsername;
             idLabel.Text = teacher.id.ToString();
+            Text = "University Management System - " + teacher.firstName + " " + teacher.lastName;
         }
 
         private void PopulateSubjectList()
