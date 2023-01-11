@@ -52,12 +52,12 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="subject" Type="int" Nullable="false" />
           <Property Name="weekDay" Type="int" Nullable="false" />
-          <Property Name="time" Type="time" Precision="0" Nullable="false" />
           <Property Name="duration" Type="int" Nullable="false" />
           <Property Name="teacher" Type="int" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="classroom" Type="int" Nullable="false" />
           <Property Name="studentGroup" Type="int" Nullable="false" />
+          <Property Name="time" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -411,7 +411,6 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="subject" Type="Int32" Nullable="false" />
           <Property Name="weekDay" Type="Int32" Nullable="false" />
-          <Property Name="time" Type="Time" Nullable="false" Precision="0" />
           <Property Name="duration" Type="Int32" Nullable="false" />
           <Property Name="teacher" Type="Int32" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
@@ -421,6 +420,7 @@
           <NavigationProperty Name="Person" Relationship="Self.FK_Lesson_Person" FromRole="Lesson" ToRole="Person" />
           <NavigationProperty Name="StudentGroup1" Relationship="Self.FK_Lesson_StudentGroup" FromRole="Lesson" ToRole="StudentGroup" />
           <NavigationProperty Name="Subject1" Relationship="Self.FK_Lesson_Subject" FromRole="Lesson" ToRole="Subject" />
+          <Property Name="time" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -785,10 +785,10 @@
           <EntitySetMapping Name="Lessons">
             <EntityTypeMapping TypeName="UniDBModel.Lesson">
               <MappingFragment StoreEntitySet="Lesson">
+                <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="subject" ColumnName="subject" />
                 <ScalarProperty Name="weekDay" ColumnName="weekDay" />
-                <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="duration" ColumnName="duration" />
                 <ScalarProperty Name="teacher" ColumnName="teacher" />
                 <ScalarProperty Name="type" ColumnName="type" />

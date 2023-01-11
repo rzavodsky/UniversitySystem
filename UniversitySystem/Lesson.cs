@@ -17,12 +17,12 @@ namespace UniversitySystem
         public int id { get; set; }
         public int subject { get; set; }
         public int weekDay { get; set; }
-        public System.TimeSpan time { get; set; }
         public int duration { get; set; }
         public int teacher { get; set; }
         public string type { get; set; }
         public int classroom { get; set; }
         public int studentGroup { get; set; }
+        public int time { get; set; }
     
         public virtual Classroom Classroom1 { get; set; }
         public virtual Person Person { get; set; }
