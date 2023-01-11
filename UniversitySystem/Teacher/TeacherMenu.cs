@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UniversitySystem.Teacher;
 
 namespace UniversitySystem
 {
@@ -119,7 +120,8 @@ namespace UniversitySystem
 
         private void passwordButton_Click(object sender, EventArgs e)
         {
-
+            var form = new PasswordChangeForm(this.teacher);
+            form.ShowDialog();
         }
 
         private void studentListButton_Click(object sender, EventArgs e)
