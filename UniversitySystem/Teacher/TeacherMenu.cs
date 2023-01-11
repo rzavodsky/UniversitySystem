@@ -17,9 +17,9 @@ namespace UniversitySystem
         public static string[] DAYS_OF_WEEK = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
 
         private Person teacher;
-        public TeacherMenu(int teacherId)
+        public TeacherMenu(Person teacher)
         {
-            this.teacher = DBConnection.DB.People.Find(teacherId);
+            this.teacher = teacher;
 
             InitializeComponent();
 

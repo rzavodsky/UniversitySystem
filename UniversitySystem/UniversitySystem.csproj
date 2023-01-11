@@ -55,61 +55,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminMenu.cs">
+    <Compile Include="Admin\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminMenu.Designer.cs">
+    <Compile Include="Admin\AdminMenu.Designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="City.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\CityUpdateForm.cs">
+    <Compile Include="Admin\CityUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\CityUpdateForm.Designer.cs">
+    <Compile Include="Admin\CityUpdateForm.Designer.cs">
       <DependentUpon>CityUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classroom.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\ClassroomUpdateForm.cs">
+    <Compile Include="Admin\ClassroomUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\ClassroomUpdateForm.Designer.cs">
+    <Compile Include="Admin\ClassroomUpdateForm.Designer.cs">
       <DependentUpon>ClassroomUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Country.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\CountryUpdateForm.cs">
+    <Compile Include="Admin\CountryUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\CountryUpdateForm.Designer.cs">
+    <Compile Include="Admin\CountryUpdateForm.Designer.cs">
       <DependentUpon>CountryUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DegreeType.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\DegreeTypeUpdateForm.cs">
+    <Compile Include="Admin\DegreeTypeUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\DegreeTypeUpdateForm.Designer.cs">
+    <Compile Include="Admin\DegreeTypeUpdateForm.Designer.cs">
       <DependentUpon>DegreeTypeUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Faculty.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\FacultyUpdateForm.cs">
+    <Compile Include="Admin\FacultyUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\FacultyUpdateForm.Designer.cs">
+    <Compile Include="Admin\FacultyUpdateForm.Designer.cs">
       <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\LessonUpdateForm.cs">
+    <Compile Include="Admin\LessonUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\LessonUpdateForm.Designer.cs">
+    <Compile Include="Admin\LessonUpdateForm.Designer.cs">
       <DependentUpon>LessonUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
@@ -128,51 +128,51 @@
     <Compile Include="Programme.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\ProgrammeUpdateForm.cs">
+    <Compile Include="Admin\ProgrammeUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\ProgrammeUpdateForm.Designer.cs">
+    <Compile Include="Admin\ProgrammeUpdateForm.Designer.cs">
       <DependentUpon>ProgrammeUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentGroup.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\StudentGroupUpdateForm.cs">
+    <Compile Include="Admin\StudentGroupUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\StudentGroupUpdateForm.Designer.cs">
+    <Compile Include="Admin\StudentGroupUpdateForm.Designer.cs">
       <DependentUpon>StudentGroupUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentSubject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\StudentUpdateForm.cs">
+    <Compile Include="Admin\StudentUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\StudentUpdateForm.Designer.cs">
+    <Compile Include="Admin\StudentUpdateForm.Designer.cs">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Subject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
-    <Compile Include="UpdateForms\SubjectUpdateForm.cs">
+    <Compile Include="Admin\SubjectUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\SubjectUpdateForm.Designer.cs">
+    <Compile Include="Admin\SubjectUpdateForm.Designer.cs">
       <DependentUpon>SubjectUpdateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherMenu.cs">
+    <Compile Include="Teacher\TeacherMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherMenu.Designer.cs">
+    <Compile Include="Teacher\TeacherMenu.Designer.cs">
       <DependentUpon>TeacherMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateForms\TeacherUpdateForm.cs">
+    <Compile Include="Admin\TeacherUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateForms\TeacherUpdateForm.Designer.cs">
+    <Compile Include="Admin\TeacherUpdateForm.Designer.cs">
       <DependentUpon>TeacherUpdateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UniversityModel.Context.cs">
@@ -190,31 +190,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UniversityModel.edmx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminMenu.resx">
+    <EmbeddedResource Include="Admin\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\ClassroomUpdateForm.resx">
+    <EmbeddedResource Include="Admin\ClassroomUpdateForm.resx">
       <DependentUpon>ClassroomUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\DegreeTypeUpdateForm.resx">
+    <EmbeddedResource Include="Admin\DegreeTypeUpdateForm.resx">
       <DependentUpon>DegreeTypeUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\FacultyUpdateForm.resx">
+    <EmbeddedResource Include="Admin\FacultyUpdateForm.resx">
       <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\CityUpdateForm.resx">
+    <EmbeddedResource Include="Admin\CityUpdateForm.resx">
       <DependentUpon>CityUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\CountryUpdateForm.resx">
+    <EmbeddedResource Include="Admin\CountryUpdateForm.resx">
       <DependentUpon>CountryUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\LessonUpdateForm.resx">
+    <EmbeddedResource Include="Admin\LessonUpdateForm.resx">
       <DependentUpon>LessonUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\ProgrammeUpdateForm.resx">
+    <EmbeddedResource Include="Admin\ProgrammeUpdateForm.resx">
       <DependentUpon>ProgrammeUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -226,19 +226,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UpdateForms\StudentGroupUpdateForm.resx">
+    <EmbeddedResource Include="Admin\StudentGroupUpdateForm.resx">
       <DependentUpon>StudentGroupUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\StudentUpdateForm.resx">
+    <EmbeddedResource Include="Admin\StudentUpdateForm.resx">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\SubjectUpdateForm.resx">
+    <EmbeddedResource Include="Admin\SubjectUpdateForm.resx">
       <DependentUpon>SubjectUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherMenu.resx">
+    <EmbeddedResource Include="Teacher\TeacherMenu.resx">
       <DependentUpon>TeacherMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateForms\TeacherUpdateForm.resx">
+    <EmbeddedResource Include="Admin\TeacherUpdateForm.resx">
       <DependentUpon>TeacherUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
