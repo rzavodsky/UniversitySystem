@@ -16,10 +16,7 @@ namespace UniversitySystem
         {
             new Resource("Students", new string[]{"First Name", "Last Name", "Student Group", "Birth Date", "Credits"}, (dataGridView) =>
             {
-                var students = from student in DBConnection.DB.People
-                           where student.isTeacher == false
-                           select student;
-                foreach (var student in students)
+                foreach (var student in DBConnection.DB.People.Where(s => !s.isTeacher))
                 {
                     dataGridView.Rows.Add(new object[] {
                         student.id,
@@ -36,10 +33,7 @@ namespace UniversitySystem
 
             new Resource("Teachers", new string[]{"First Name", "Last Name", "Faculty", "Birth Date"}, (dataGridView) =>
             {
-                var teachers = from teacher in DBConnection.DB.People
-                               where teacher.isTeacher == true
-                               select teacher;
-                foreach (var teacher in teachers)
+                foreach (var teacher in DBConnection.DB.People.Where(t => t.isTeacher))
                 {
                     dataGridView.Rows.Add(new object[] {
                         teacher.id,
@@ -54,9 +48,7 @@ namespace UniversitySystem
 
             new Resource("Countries", new string[]{"Name"}, (dataGridView) =>
             {
-                var countries = from country in DBConnection.DB.Countries
-                               select country;
-                foreach (var country in countries)
+                foreach (var country in DBConnection.DB.Countries)
                 {
                     dataGridView.Rows.Add(new object[] {
                         country.id,
@@ -68,9 +60,7 @@ namespace UniversitySystem
 
             new Resource("Cities", new string[]{"Name", "Country"}, (dataGridView) =>
             {
-                var cities = from city in DBConnection.DB.Cities
-                               select city;
-                foreach (var city in cities)
+                foreach (var city in DBConnection.DB.Cities)
                 {
                     dataGridView.Rows.Add(new object[] {
                         city.id,
@@ -83,9 +73,7 @@ namespace UniversitySystem
 
             new Resource("Classrooms", new string[]{"Name"}, (dataGridView) =>
             {
-                var classrooms = from classroom in DBConnection.DB.Classrooms
-                               select classroom;
-                foreach (var classroom in classrooms)
+                foreach (var classroom in DBConnection.DB.Classrooms)
                 {
                     dataGridView.Rows.Add(new object[] {
                         classroom.id,
@@ -97,9 +85,7 @@ namespace UniversitySystem
 
             new Resource("Faculties", new string[]{"Name", "Shortcut", "Description"}, (dataGridView) =>
             {
-                var faculties = from faculty in DBConnection.DB.Faculties
-                               select faculty;
-                foreach (var faculty in faculties)
+                foreach (var faculty in DBConnection.DB.Faculties)
                 {
                     dataGridView.Rows.Add(new object[] {
                         faculty.id,
@@ -113,9 +99,7 @@ namespace UniversitySystem
 
             new Resource("Programmes", new string[]{"Name", "Faculty", "Degree Type"}, (dataGridView) =>
             {
-                var programmes = from programme in DBConnection.DB.Programmes
-                               select programme;
-                foreach (var programme in programmes)
+                foreach (var programme in DBConnection.DB.Programmes)
                 {
                     dataGridView.Rows.Add(new object[] {
                         programme.id,
@@ -129,9 +113,7 @@ namespace UniversitySystem
 
             new Resource("Degree Types", new string[]{"Name", "Duration", "Required Credits"}, (dataGridView) =>
             {
-                var degreeTypes = from degreeType in DBConnection.DB.DegreeTypes
-                                  select degreeType;
-                foreach (var degreeType in degreeTypes)
+                foreach (var degreeType in DBConnection.DB.DegreeTypes)
                 {
                     dataGridView.Rows.Add(new object[] {
                         degreeType.id,
@@ -145,9 +127,7 @@ namespace UniversitySystem
 
             new Resource("Student Groups", new string[]{"Name", "Programme"}, (dataGridView) =>
             {
-                var studentGroups = from studentGroup in DBConnection.DB.StudentGroups
-                                  select studentGroup;
-                foreach (var studentGroup in studentGroups)
+                foreach (var studentGroup in DBConnection.DB.StudentGroups)
                 {
                     dataGridView.Rows.Add(new object[] {
                         studentGroup.id,
@@ -157,6 +137,42 @@ namespace UniversitySystem
                 }
             }, (id) => new StudentGroupUpdateForm(id),
                (id) => DBConnection.DB.StudentGroups.Remove(DBConnection.DB.StudentGroups.Find(id))),
+
+            new Resource("Lessons", new string[]{"Subject", "Week Day", "Time", "Duration", "Teacher", "Type", "Classroom", "Student Group"}, (dataGridView) =>
+            {
+                foreach (var lesson in DBConnection.DB.Lessons)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        lesson.id,
+                        lesson.Subject1.name,
+                        TeacherMenu.DAYS_OF_WEEK[lesson.weekDay],
+                        lesson.time + ":00",
+                        lesson.duration,
+                        lesson.Person.firstName + " " + lesson.Person.lastName,
+                        lesson.type,
+                        lesson.Classroom1.name,
+                        lesson.StudentGroup1.name,
+                    });
+                }
+            }, (id) => new LessonUpdateForm(id),
+               (id) => DBConnection.DB.Lessons.Remove(DBConnection.DB.Lessons.Find(id))),
+
+            new Resource("Subjects", new string[]{"Name", "Faculty", "Excercise Amount", "Lecture Amount", "Credits", "Semester"}, (dataGridView) =>
+            {
+                foreach (var subject in DBConnection.DB.Subjects)
+                {
+                    dataGridView.Rows.Add(new object[] {
+                        subject.id,
+                        subject.name,
+                        subject.Faculty1.shortcut,
+                        subject.excerciseAmount,
+                        subject.lectureAmount,
+                        subject.credits,
+                        subject.semester,
+                    });
+                }
+            }, (id) => new SubjectUpdateForm(id),
+               (id) => DBConnection.DB.Subjects.Remove(DBConnection.DB.Subjects.Find(id))),
         };
 
         public AdminMenu()
