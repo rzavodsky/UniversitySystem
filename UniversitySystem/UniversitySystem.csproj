@@ -106,6 +106,12 @@
     <Compile Include="FacultyUpdateForm.Designer.cs">
       <DependentUpon>FacultyUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LessonUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LessonUpdateForm.Designer.cs">
+      <DependentUpon>LessonUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="SubjectUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectUpdateForm.Designer.cs">
+      <DependentUpon>SubjectUpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,9 @@
     <EmbeddedResource Include="CountryUpdateForm.resx">
       <DependentUpon>CountryUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LessonUpdateForm.resx">
+      <DependentUpon>LessonUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentUpdateForm.resx">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectUpdateForm.resx">
+      <DependentUpon>SubjectUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherMenu.resx">
       <DependentUpon>TeacherMenu.cs</DependentUpon>
