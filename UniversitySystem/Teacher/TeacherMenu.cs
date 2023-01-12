@@ -76,6 +76,7 @@ namespace UniversitySystem
             timeTable.Columns[0].Width = 40;
             timeTable.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
+            var rnd = new Random();
             for (int dayIndex = 0; dayIndex < DAYS_OF_WEEK.Length; dayIndex++)
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -94,7 +95,6 @@ namespace UniversitySystem
 
                 foreach (var lesson in lessons)
                 {
-                    var rnd = new Random();
                     var color = Color.FromArgb(128 + rnd.Next(128), 128 + rnd.Next(128), 128 + rnd.Next(128));
                     var startHour = lesson.time;
                     for (int i = 0; i < lesson.duration; i++)
