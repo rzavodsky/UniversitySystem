@@ -153,6 +153,24 @@
     <Compile Include="Admin\StudentUpdateForm.Designer.cs">
       <DependentUpon>StudentUpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\StudentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\StudentMenu.Designer.cs">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\SubjectInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\SubjectInfoForm.Designer.cs">
+      <DependentUpon>SubjectInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\SubjectListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\SubjectListForm.Designer.cs">
+      <DependentUpon>SubjectListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Subject.cs">
       <DependentUpon>UniversityModel.tt</DependentUpon>
     </Compile>
@@ -256,6 +274,15 @@
     <EmbeddedResource Include="PasswordChangeForm.resx">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student\StudentMenu.resx">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\SubjectInfoForm.resx">
+      <DependentUpon>SubjectInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\SubjectListForm.resx">
+      <DependentUpon>SubjectListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Teacher\GradeUpdateForm.resx">
       <DependentUpon>GradeUpdateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,5 +331,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

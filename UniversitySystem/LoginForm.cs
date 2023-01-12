@@ -47,7 +47,7 @@ namespace UniversitySystem
                     ChangeForm(new TeacherMenu(person));
                 } else
                 {
-                    throw new NotImplementedException();
+                    ChangeForm(new StudentMenu(person));
                 }
                 
             } else
