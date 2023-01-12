@@ -88,6 +88,7 @@
             this.searchInput.Name = "searchInput";
             this.searchInput.Size = new System.Drawing.Size(132, 20);
             this.searchInput.TabIndex = 4;
+            this.searchInput.TextChanged += new System.EventHandler(this.searchInput_TextChanged);
             // 
             // addButton
             // 

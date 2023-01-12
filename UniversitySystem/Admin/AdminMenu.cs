@@ -14,9 +14,13 @@ namespace UniversitySystem
     {
         private static Resource[] RESOURCES =
         {
-            new Resource("Students", new string[]{"First Name", "Last Name", "Student Group", "Birth Date", "Credits"}, (dataGridView) =>
+            new Resource("Students", new string[]{"First Name", "Last Name", "Student Group", "Birth Date", "Credits"}, (dataGridView, searchTerm) =>
             {
-                foreach (var student in DBConnection.DB.People.Where(s => !s.isTeacher))
+                foreach (var student in DBConnection.DB.People.Where(s => !s.isTeacher && (
+                    s.firstName.ToLower().Contains(searchTerm) ||
+                    s.lastName.ToLower().Contains(searchTerm) ||
+                    s.id.ToString().Contains(searchTerm)
+                    )))
                 {
                     dataGridView.Rows.Add(new object[] {
                         student.id,
@@ -31,9 +35,13 @@ namespace UniversitySystem
                (id) => DBConnection.DB.People.Remove(DBConnection.DB.People.Find(id))),
 
 
-            new Resource("Teachers", new string[]{"First Name", "Last Name", "Faculty", "Birth Date"}, (dataGridView) =>
+            new Resource("Teachers", new string[]{"First Name", "Last Name", "Faculty", "Birth Date"}, (dataGridView, searchTerm) =>
             {
-                foreach (var teacher in DBConnection.DB.People.Where(t => t.isTeacher))
+                foreach (var teacher in DBConnection.DB.People.Where(t => t.isTeacher && (
+                    t.firstName.ToLower().Contains(searchTerm) ||
+                    t.lastName.ToLower().Contains(searchTerm) ||
+                    t.id.ToString().Contains(searchTerm)
+                )))
                 {
                     dataGridView.Rows.Add(new object[] {
                         teacher.id,
@@ -46,9 +54,9 @@ namespace UniversitySystem
             }, (id) => new TeacherUpdateForm(id), 
                (id) => DBConnection.DB.People.Remove(DBConnection.DB.People.Find(id))),
 
-            new Resource("Countries", new string[]{"Name"}, (dataGridView) =>
+            new Resource("Countries", new string[]{"Name"}, (dataGridView, searchTerm) =>
             {
-                foreach (var country in DBConnection.DB.Countries)
+                foreach (var country in DBConnection.DB.Countries.Where(c => c.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         country.id,
@@ -58,9 +66,9 @@ namespace UniversitySystem
             }, (id) => new CountryUpdateForm(id),
                (id) => DBConnection.DB.Countries.Remove(DBConnection.DB.Countries.Find(id))),
 
-            new Resource("Cities", new string[]{"Name", "Country"}, (dataGridView) =>
+            new Resource("Cities", new string[]{"Name", "Country"}, (dataGridView, searchTerm) =>
             {
-                foreach (var city in DBConnection.DB.Cities)
+                foreach (var city in DBConnection.DB.Cities.Where(c => c.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         city.id,
@@ -71,9 +79,9 @@ namespace UniversitySystem
             }, (id) => new CityUpdateForm(id),
                (id) => DBConnection.DB.Cities.Remove(DBConnection.DB.Cities.Find(id))),
 
-            new Resource("Classrooms", new string[]{"Name"}, (dataGridView) =>
+            new Resource("Classrooms", new string[]{"Name"}, (dataGridView, searchTerm) =>
             {
-                foreach (var classroom in DBConnection.DB.Classrooms)
+                foreach (var classroom in DBConnection.DB.Classrooms.Where(c => c.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         classroom.id,
@@ -83,9 +91,9 @@ namespace UniversitySystem
             }, (id) => new ClassroomUpdateForm(id),
                (id) => DBConnection.DB.Classrooms.Remove(DBConnection.DB.Classrooms.Find(id))),
 
-            new Resource("Faculties", new string[]{"Name", "Shortcut", "Description"}, (dataGridView) =>
+            new Resource("Faculties", new string[]{"Name", "Shortcut", "Description"}, (dataGridView, searchTerm) =>
             {
-                foreach (var faculty in DBConnection.DB.Faculties)
+                foreach (var faculty in DBConnection.DB.Faculties.Where(f => f.name.ToLower().Contains(searchTerm) || f.shortcut.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         faculty.id,
@@ -97,9 +105,9 @@ namespace UniversitySystem
             }, (id) => new FacultyUpdateForm(id),
                (id) => DBConnection.DB.Faculties.Remove(DBConnection.DB.Faculties.Find(id))),
 
-            new Resource("Programmes", new string[]{"Name", "Faculty", "Degree Type"}, (dataGridView) =>
+            new Resource("Programmes", new string[]{"Name", "Faculty", "Degree Type"}, (dataGridView, searchTerm) =>
             {
-                foreach (var programme in DBConnection.DB.Programmes)
+                foreach (var programme in DBConnection.DB.Programmes.Where(p => p.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         programme.id,
@@ -111,9 +119,9 @@ namespace UniversitySystem
             }, (id) => new ProgrammeUpdateForm(id),
                (id) => DBConnection.DB.Programmes.Remove(DBConnection.DB.Programmes.Find(id))),
 
-            new Resource("Degree Types", new string[]{"Name", "Duration", "Required Credits"}, (dataGridView) =>
+            new Resource("Degree Types", new string[]{"Name", "Duration", "Required Credits"}, (dataGridView, searchTerm) =>
             {
-                foreach (var degreeType in DBConnection.DB.DegreeTypes)
+                foreach (var degreeType in DBConnection.DB.DegreeTypes.Where(d => d.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         degreeType.id,
@@ -125,9 +133,9 @@ namespace UniversitySystem
             }, (id) => new DegreeTypeUpdateForm(id),
                (id) => DBConnection.DB.DegreeTypes.Remove(DBConnection.DB.DegreeTypes.Find(id))),
 
-            new Resource("Student Groups", new string[]{"Name", "Programme"}, (dataGridView) =>
+            new Resource("Student Groups", new string[]{"Name", "Programme"}, (dataGridView, searchTerm) =>
             {
-                foreach (var studentGroup in DBConnection.DB.StudentGroups)
+                foreach (var studentGroup in DBConnection.DB.StudentGroups.Where(s => s.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         studentGroup.id,
@@ -138,9 +146,9 @@ namespace UniversitySystem
             }, (id) => new StudentGroupUpdateForm(id),
                (id) => DBConnection.DB.StudentGroups.Remove(DBConnection.DB.StudentGroups.Find(id))),
 
-            new Resource("Lessons", new string[]{"Subject", "Week Day", "Time", "Duration", "Teacher", "Type", "Classroom", "Student Group"}, (dataGridView) =>
+            new Resource("Lessons", new string[]{"Subject", "Week Day", "Time", "Duration", "Teacher", "Type", "Classroom", "Student Group"}, (dataGridView, searchTerm) =>
             {
-                foreach (var lesson in DBConnection.DB.Lessons)
+                foreach (var lesson in DBConnection.DB.Lessons.Where(l => l.Subject1.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         lesson.id,
@@ -157,9 +165,9 @@ namespace UniversitySystem
             }, (id) => new LessonUpdateForm(id),
                (id) => DBConnection.DB.Lessons.Remove(DBConnection.DB.Lessons.Find(id))),
 
-            new Resource("Subjects", new string[]{"Name", "Faculty", "Excercise Amount", "Lecture Amount", "Credits", "Semester"}, (dataGridView) =>
+            new Resource("Subjects", new string[]{"Name", "Faculty", "Excercise Amount", "Lecture Amount", "Credits", "Semester"}, (dataGridView, searchTerm) =>
             {
-                foreach (var subject in DBConnection.DB.Subjects)
+                foreach (var subject in DBConnection.DB.Subjects.Where(s => s.name.ToLower().Contains(searchTerm)))
                 {
                     dataGridView.Rows.Add(new object[] {
                         subject.id,
@@ -201,7 +209,7 @@ namespace UniversitySystem
         {
             var resource = (Resource)resourceSelector.SelectedItem;
             dataGridView.Rows.Clear();
-            resource.PopulationFunction(dataGridView);
+            resource.PopulationFunction(dataGridView, searchInput.Text.ToLower());
         }
 
         private void resourceSelector_SelectedIndexChanged(object sender, EventArgs e)
@@ -233,11 +241,16 @@ namespace UniversitySystem
             DBConnection.DB.SaveChanges();
             PopulateDataGridView();
         }
+
+        private void searchInput_TextChanged(object sender, EventArgs e)
+        {
+            PopulateDataGridView();
+        }
     }
 
     internal class Resource
     {
-        public Resource(string name, string[] columns, Action<DataGridView> populationFunction, Func<int?, Form> openForm, Action<int> deleteFunction)
+        public Resource(string name, string[] columns, Action<DataGridView, string> populationFunction, Func<int?, Form> openForm, Action<int> deleteFunction)
         {
             Name = name;
             Columns = columns;
@@ -248,7 +261,7 @@ namespace UniversitySystem
 
         public string Name { get; set; }
         public string[] Columns { get; set; }
-        public Action<DataGridView> PopulationFunction { get; set; }
+        public Action<DataGridView, string> PopulationFunction { get; set; }
         public Func<int?, Form> OpenForm { get; set; }
         public Action<int> DeleteFunction { get; set; }
     }
