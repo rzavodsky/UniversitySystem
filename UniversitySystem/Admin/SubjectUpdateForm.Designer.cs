@@ -164,20 +164,30 @@
             // semesterUpDown
             // 
             this.semesterUpDown.Location = new System.Drawing.Point(79, 161);
-            this.semesterUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.semesterUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.semesterUpDown.Maximum = new decimal(new int[] {
             10,
+            0,
+            0,
+            0});
+            this.semesterUpDown.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.semesterUpDown.Name = "semesterUpDown";
             this.semesterUpDown.Size = new System.Drawing.Size(266, 20);
             this.semesterUpDown.TabIndex = 27;
+            this.semesterUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // creditsUpDown
             // 
             this.creditsUpDown.Location = new System.Drawing.Point(79, 138);
-            this.creditsUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.creditsUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.creditsUpDown.Name = "creditsUpDown";
             this.creditsUpDown.Size = new System.Drawing.Size(266, 20);
             this.creditsUpDown.TabIndex = 28;
@@ -185,7 +195,7 @@
             // lecturesUpDown
             // 
             this.lecturesUpDown.Location = new System.Drawing.Point(79, 115);
-            this.lecturesUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lecturesUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.lecturesUpDown.Name = "lecturesUpDown";
             this.lecturesUpDown.Size = new System.Drawing.Size(266, 20);
             this.lecturesUpDown.TabIndex = 29;
@@ -193,7 +203,7 @@
             // exercisesUpDown
             // 
             this.exercisesUpDown.Location = new System.Drawing.Point(79, 92);
-            this.exercisesUpDown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exercisesUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.exercisesUpDown.Name = "exercisesUpDown";
             this.exercisesUpDown.Size = new System.Drawing.Size(266, 20);
             this.exercisesUpDown.TabIndex = 30;
@@ -239,7 +249,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.confirmButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SubjectUpdateForm";
             this.Text = "SubjectForm";
             ((System.ComponentModel.ISupportInitialize)(this.semesterUpDown)).EndInit();
